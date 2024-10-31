@@ -1,4 +1,4 @@
-name: astrocore
+name: AstroCore
 main: dev.astroolean.Plugin
 version: 1.0
 api-version: 1.20
@@ -6,6 +6,7 @@ authors: [ Astroolean ]
 description: My first plugin ever...
 website: astroolean.dev
 commands:
+  astrocore:
+    description: Enable or disable the AstroCore plugin
   hello:
-    description: Says hello to the player.
-    usage: /hello
+    description: A friendly Hello command
