@@ -1,24 +1,39 @@
 # AstroCore
-Demonstration of a minecraft plugin I am creating. First ever Minecraft plugin. Very new to Java code. Issues and or problems are expected. This is purely for fun and or educational purposes.
-
-
-# /astrocore
-This is supposed to enable/disable the plugin AstroCore. When the plugin is disabled nothing will work; when enabled it will work.
-# /hello
-This just says hello back to the player...
-# /help
-This directs you to the suicide hotline...
-# /god
-This makes you invincible along-side the use of fly. Essentially your fucking Thanos at this point...
-# /cc
-This clears the fucking chat. Pretty self explanatory even for me and im retarded...
-# /smoke
-This is a command that consumes 16 green dye in order to get high... Custom model data support will make this more worthwhile.
-# /snort
-This is a command that consumes 16 sugar in order to get high... Custom model data support will make this more worthwhile.
-# /gm
-This is the command in order to open the Gamemode GUI alongside checks for OP status to prevent anyone from using.
-# /t
-This is the command in order to open the Time GUI alongside checks for OP status to prevent anyone from using.
-# /w
-This is the command in order to open the Weather GUI alongside checks for OP status to prevent anyone from using.
+## Demonstration of a minecraft plugin I am creating. First ever Minecraft plugin. Very new to Java code. Issues and or problems are expected. This is purely for fun and or educational purposes. With the help of AI and trial and error; with the use of my knowledge of Python. Gave this a chance in order to fully learn. This is a public free and open-source minecraft plugin; available to anyone and all. I have a lot planned but little by little ill learn and continue to improve this even further along the way. This is only just the beginning...
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+## /astrocore
+### This is used to enable/disable the plugin AstroCore...
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+## /hello
+### This just says hello back to the player...
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+## /help
+### This directs you to the suicide hotline...
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+## /god
+### This makes you invincible along-side the use of fly. Essentially your fucking Thanos at this point...
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+## /cc
+### This clears the fucking chat. Pretty self explanatory even for me and im retarded...
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+## /smoke
+### This is a command that consumes 16 green dye in order to get high... 
+(Custom model data support will make this more worthwhile)
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+## /snort
+### This is a command that consumes 16 sugar in order to get high... 
+(Custom model data support will make this more worthwhile)
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+## /gm
+### This is the command in order to open the Gamemode GUI...
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+## /t
+### This is the command in order to open the Time GUI...
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+## /w
+### This is the command in order to open the Weather GUI...
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
