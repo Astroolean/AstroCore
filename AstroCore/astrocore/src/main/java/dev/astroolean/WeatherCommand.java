@@ -29,30 +29,45 @@ public class WeatherCommand implements CommandExecutor, Listener {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        // Unified check for AstroCore enabled status
-        if (!isPluginEnabled()) {
-            sender.sendMessage(ChatColor.RED + "AstroCore plugin is currently disabled.");
-            return true;
-        }
-
         // Check if the sender is not null
         if (sender == null) {
             return true; // No action needed for null sender
         }
+
+        // Assuming 'plugin' is an instance of dev.astroolean.Plugin
+        if (!(plugin instanceof dev.astroolean.Plugin)) {
+            sender.sendMessage(ChatColor.RED + "Plugin is not initialized correctly.");
+            return true;
+        }
+
+        // Cast 'plugin' to your custom plugin class
+        dev.astroolean.Plugin myPlugin = (dev.astroolean.Plugin) plugin;
+
+        if (!myPlugin.isEnabledCustom()) {
+            sender.sendMessage(ChatColor.RED + "AstroCore plugin is currently disabled.");
+            return true;
+        }        
 
         // Check if the sender is a player
         if (!(sender instanceof Player player)) {
             sender.sendMessage(ChatColor.RED + "This command can only be used by players.");
             return true;
         }
+        // Check if the player is an operator
+        if (!player.isOp()) {
+            player.sendMessage(ChatColor.RED + "You do not have permission to use this command.");
+            return true;
+        }
+
+        // Check for cooldown
+        if (isOnCooldown(player)) {
+            player.sendMessage(ChatColor.RED + "You must wait before using this command again.");
+            return true;
+        }
 
         // Open the GUI
         openWeatherGUI(player);
         return true;
-    }
-
-    private boolean isPluginEnabled() {
-        return plugin.getConfig().getBoolean("astrocore_enabled", true);
     }
 
     private void openWeatherGUI(Player player) {
@@ -65,6 +80,14 @@ public class WeatherCommand implements CommandExecutor, Listener {
         fillEmptySlots(gui);
         player.openInventory(gui);
         setCooldown(player);
+    }
+
+    private boolean isOnCooldown(Player player) {
+        Long lastUsed = cooldowns.get(player);
+        if (lastUsed != null) {
+            return (System.currentTimeMillis() - lastUsed) < 3000; // 3 seconds cooldown
+        }
+        return false; // No cooldown if the player is not in the map
     }
 
     private ItemStack createWeatherItem(Material material, String displayName) {
