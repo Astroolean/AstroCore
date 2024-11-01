@@ -1,12 +1,39 @@
 name: AstroCore
 main: dev.astroolean.Plugin
-version: 1.0
+version: 1.1
 api-version: 1.20
 authors: [ Astroolean ]
 description: My first plugin ever...
 website: astroolean.dev
+depend: []
 commands:
   astrocore:
-    description: Enable or disable the AstroCore plugin
+    description: "Enable or disable the AstroCore plugin..."
+    usage: "/astrocore"
   hello:
-    description: A friendly Hello command
+    description: "A friendly Hello command..."
+    usage: "/hello"
+  help:
+    description: "An anti-help command..."
+    usage: "/help"
+  snort:
+    description: "Consume cocaine to gain effects..."
+    usage: "/snort"
+  smoke:
+    description: "Consume weed to gain effects..."
+    usage: "/smoke"
+  gm:
+    description: "Open the game mode selection GUI"
+    usage: "/gm"
+  t:
+    description: "Open the time selection GUI"
+    usage: "/t"
+  w:
+    description: "Open the weather selection GUI"
+    usage: "/w"
+  cc:
+    description: "Clears the fucking chat..."
+    usage: "/cc"
+  god:
+    description: "Gives absolute godmode..."
+    usage: "/god"
