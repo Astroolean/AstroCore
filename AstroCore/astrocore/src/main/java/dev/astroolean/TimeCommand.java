@@ -34,6 +34,20 @@ public class TimeCommand implements CommandExecutor, Listener {
             return true; // No action needed for null sender
         }
 
+        // Assuming 'plugin' is an instance of dev.astroolean.Plugin
+        if (!(plugin instanceof dev.astroolean.Plugin)) {
+            sender.sendMessage(ChatColor.RED + "Plugin is not initialized correctly.");
+            return true;
+        }
+
+        // Cast 'plugin' to your custom plugin class
+        dev.astroolean.Plugin myPlugin = (dev.astroolean.Plugin) plugin;
+
+        if (!myPlugin.isEnabledCustom()) {
+            sender.sendMessage(ChatColor.RED + "AstroCore plugin is currently disabled.");
+            return true;
+        }        
+
         // Check if the sender is a player
         if (!(sender instanceof Player player)) {
             sender.sendMessage(ChatColor.RED + "This command can only be used by players.");
