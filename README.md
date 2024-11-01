@@ -1,5 +1,5 @@
 # AstroCore
-## Demonstration of a minecraft plugin I am creating. First ever Minecraft plugin. Very new to Java code. Issues and or problems are expected. This is purely for fun and or educational purposes. With the help of AI and trial and error; with the use of my knowledge of Python. Gave this a chance in order to fully learn. This is a public free and open-source minecraft plugin; available to anyone and all. I have a lot planned but little by little ill learn and continue to improve this even further along the way. This is only just the beginning...ㅤㅤㅤMy coding journey continues here!
+## Demonstration of a minecraft plugin I am creating. First ever Minecraft plugin. Very new to Java code. Issues and or problems are expected. This is purely for fun and or educational purposes. With the help of AI and trial and error; with the use of my knowledge of Python. Gave this a chance in order to fully learn. This is a public free and open-source minecraft plugin; available to anyone and all. I have a lot planned but little by little ill learn and continue to improve this even further along the way. This is only just the beginning... My coding journey continues here!
 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
