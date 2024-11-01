@@ -23,7 +23,7 @@ public class Plugin extends JavaPlugin
             ____________________________
            |                            |
            |      AstroCore Plugin      |
-           |            V1.1            |
+           |            V1.2            |
            |____________________________|
            
            My first plugin has started...
@@ -50,6 +50,7 @@ public class Plugin extends JavaPlugin
         registerCommand("w", new WeatherCommand(this));
         registerCommand("cc", new ClearChatCommand(this));
         registerCommand("god", new GodCommand(this));
+        registerCommand("ac", new acCommand(this));
     
     }
 
