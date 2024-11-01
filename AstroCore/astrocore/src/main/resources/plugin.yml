@@ -1,6 +1,6 @@
 name: AstroCore
 main: dev.astroolean.Plugin
-version: 1.1
+version: 1.2
 api-version: 1.20
 authors: [ Astroolean ]
 description: My first plugin ever...
@@ -37,3 +37,6 @@ commands:
   god:
     description: "Gives absolute godmode..."
     usage: "/god"
+  ac:
+    description: "Provides basic information about the plugin..."
+    usage: "/ac"
