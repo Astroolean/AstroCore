@@ -36,7 +36,7 @@ AstroCore provides a range of commands designed to enhance gameplay and offer un
 
 ### Command Overview
 
-- **/astrocore**: Enables or disables the AstroCore plugin (use ON/OFF to test for potential conflicts with other plugins).
+- **/astrocore**: Enables or disables the AstroCore plugin. Absolutely nothing will work.
 - **/hello**: Responds with a friendly greeting.
 - **/help**: Provides information and directs you to mental health resources.
 - **/god**: Grants invincibility and the ability to fly, making you a formidable player.
