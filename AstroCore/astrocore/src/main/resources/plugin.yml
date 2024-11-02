@@ -1,6 +1,6 @@
 name: AstroCore
-main: dev.astroolean.Plugin
-version: 1.2
+main: dev.astroolean.AstroCore
+version: 1.3
 api-version: 1.20
 authors: [ Astroolean ]
 description: My first plugin ever...
@@ -40,3 +40,39 @@ commands:
   ac:
     description: "Provides basic information about the plugin..."
     usage: "/ac"
+  rename:
+    description: "Rename the item you are holding."
+    usage: "/rename <name>"
+  lore:
+    description: "Set lore for the item you are holding."
+    usage: "/lore <line> <text>"
+  p:
+    description: "Shows the list of installed plugins if you are OP."
+    usage: "/p"
+  pv:
+    description: "PlayerVault storage for players..."
+    usage: "/pv [number]"
+  fix:
+    description: "Repair your fucking items you lazy bum..."
+    usage: "/fix [hand/all]"
+  heal:
+    description: "Heal yourself to full health."
+    usage: "/heal"
+  sethome:
+    description: "Set a home location."
+    usage: "/sethome [name]"
+  home:
+    description: "Teleport to a home location."
+    usage: "/home [name]"
+  delhome:
+    description: "Delete a home location."
+    usage: "/delhome [name]"
+  homes:
+    description: "View your current homes."
+    usage: "/homes"
+  feed:
+    description: "Go ahead and feed yourself."
+    usage: "/feed"
+  spawn:
+    description: "Set and go to the fucking spawn."
+    usage: "/spawn [set]"
