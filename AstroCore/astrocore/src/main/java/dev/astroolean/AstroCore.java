@@ -5,6 +5,7 @@ import dev.astroolean.commands.*;
 import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
@@ -20,6 +21,7 @@ public class AstroCore extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
+
         // Create the PlayerData directory if it doesn't exist
         File playerDataDir = new File(getDataFolder(), "PlayerData");
         if (!playerDataDir.exists()) {
@@ -34,25 +36,25 @@ public class AstroCore extends JavaPlugin implements Listener {
         LOGGER.info("AstroCore enabled");
         LOGGER.info("""
 
-                ____________________________
-               |                            |
-               |      AstroCore Plugin      |
-               |            V1.3            |
-               |____________________________|
+                               ____________________________
+                              |                            |
+                              |      AstroCore Plugin      |
+                              |            V1.4            |
+                              |____________________________|
 
-               My first plugin has started...
+                              My first plugin has started...
 
-                class AstrooleanSignature:
-                    def __init__(self, NAME="Astroolean"):
-                        self.NAME = NAME
-                    def Signature(self):
-                        Astro = "Astro - The online name I've always gone by."
-                        Boolean = "Boolean - Embracing the simplicity of true/false."
-                        return f"/nSignature:/n{Astro}/n{Boolean}/nAll-in-all it's just Astroolean."
-                Astroolean = AstrooleanSignature()
-                print(Astroolean.Signature())
+                               class AstrooleanSignature:
+                                   def __init__(self, NAME="Astroolean"):
+                                       self.NAME = NAME
+                                   def Signature(self):
+                                       Astro = "Astro - The online name I've always gone by."
+                                       Boolean = "Boolean - Embracing the simplicity of true/false."
+                                       return f"/nSignature:/n{Astro}/n{Boolean}/nAll-in-all it's just Astroolean."
+                               Astroolean = AstrooleanSignature()
+                               print(Astroolean.Signature())
 
-                Absolutely free and open-source for all to use and enjoy...
+                               Absolutely free and open-source for all to use and enjoy...
 
                """);
 
