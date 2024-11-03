@@ -124,4 +124,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-For questions or feedback, please contact me at [astroolean@gmail.com](mailto:astroolean@gmail.com).
+For questions or feedback, please contact me @Astroolean on discord...
