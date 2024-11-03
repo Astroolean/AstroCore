@@ -137,4 +137,4 @@ permissions:
     default: false
   astrocore.help:
     description: Directs you to the suicide hotline.
-    default: op
+    default: false
