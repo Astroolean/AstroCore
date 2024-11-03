@@ -17,7 +17,7 @@ public class ClearChatCommand implements CommandExecutor {
     private final JavaPlugin plugin; // Store a reference to the JavaPlugin
     private final HashMap<UUID, Long> cooldowns = new HashMap<>(); // Cooldowns for players
     private final int clearMessageCount = 100; // Number of messages to send to clear chat
-    private final int cooldownTime = 10; // Cooldown time in seconds
+    private final int cooldownTime = 3; // Cooldown time in seconds
 
     public ClearChatCommand(JavaPlugin plugin) {
         this.plugin = plugin;
