@@ -15,6 +15,8 @@ Before running this plugin, ensure you have the following:
 - **Java**: JDK 17 or higher installed on your system.
 - **Plugin Installation**: Familiarity with how to install plugins on a Minecraft server.
 - **Basic Configuration Knowledge**: Understanding how to modify configuration files for plugins.
+- **Permissions Plugin**: LuckPerms or another permissions plugin is required to set up permissions for this plugin.
+
 
 ---
 
