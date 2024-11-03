@@ -1,6 +1,6 @@
 name: AstroCore
 main: dev.astroolean.AstroCore
-version: 1.3
+version: 1.4
 api-version: 1.20
 authors: [ Astroolean ]
 description: My first plugin ever...
@@ -76,3 +76,65 @@ commands:
   spawn:
     description: "Set and go to the fucking spawn."
     usage: "/spawn [set]"
+
+permissions:
+  astrocore.use:
+    description: Allows usage of the AstroCore commands.
+    default: false
+  astrocore.rename:
+    description: Allows the player to rename items.
+    default: false
+  astrocore.lore:
+    description: Allows the player to set item lore.
+    default: false
+  astrocore.plugins:
+    description: Allows the player to see the list of installed plugins.
+    default: op
+  astrocore.pv:
+    description: Allows the player to access the player vault.
+    default: false
+  astrocore.fix:
+    description: Allows the player to repair items.
+    default: false
+  astrocore.heal:
+    description: Allows the player to heal themselves.
+    default: false
+  astrocore.sethome:
+    description: Allows the player to set home locations.
+    default: false
+  astrocore.home:
+    description: Allows the player to teleport to home locations.
+    default: false
+  astrocore.delhome:
+    description: Allows the player to delete home locations.
+    default: false
+  astrocore.homes:
+    description: Allows the player to view their home locations.
+    default: false
+  astrocore.feed:
+    description: Allows the player to feed themselves.
+    default: false
+  astrocore.spawn:
+    description: Allows the player to set and teleport to spawn.
+    default: false
+  astrocore.clearChat:
+    description: Allows the player to clear the chat.
+    default: false
+  astrocore.god:
+    description: Allows the player to use god mode.
+    default: false
+  astrocore.smoke:
+    description: Allows the player to get high.
+    default: false
+  astrocore.snort:
+    description: Allows the player to get high.
+    default: false
+  astrocore.astrocore:
+    description: Enable/disable the plugin.
+    default: op
+  astrocore.hello:
+    description: Friendly hello message to the player.
+    default: false
+  astrocore.help:
+    description: Directs you to the suicide hotline.
+    default: op
