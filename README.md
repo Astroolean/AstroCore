@@ -85,7 +85,7 @@ AstroCore provides a range of commands designed to enhance gameplay and offer un
 | `astrocore.snort`   | Allows the player to get high.                        | `false`  |
 | `astrocore.astrocore`| Enable/disable the plugin.                          | `op`     |
 | `astrocore.hello`   | Friendly hello message to the player.                | `false`  |
-| `astrocore.help`    | Directs you to the suicide hotline.                  | `op`     |
+| `astrocore.help`    | Directs you to the suicide hotline.                  | `false`     |
 
 
 ---
