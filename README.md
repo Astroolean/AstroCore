@@ -1,6 +1,7 @@
 <p align="center">
-    <img src="https://github.com/user-attachments/assets/7178406f-2079-4c11-8e7c-72457d0fa1bc" alt="AstroCore Image" />
+    <img src="https://github.com/user-attachments/assets/61825b89-dc00-4ff8-89e2-36c834812bc5" alt="AstroCore Image" />
 </p>
+
 
 **AstroCore** is a demonstration of a minecraft plugin I am creating. First ever Minecraft plugin. Very new to Java code. Issues and or problems are expected. This is purely for fun and or educational purposes. With the help of AI and trial and error; with the use of my knowledge of Python. Gave this a chance in order to fully learn. This is a public free and open-source minecraft plugin; available to anyone and all. I have a lot planned but little by little ill learn and continue to improve this even further along the way. This is only just the beginning... My coding journey continues here!
 
@@ -61,6 +62,34 @@ AstroCore provides a range of commands designed to enhance gameplay and offer un
 
 ---
 
+## Permissions
+
+| Permission          | Description                                           | Default  |
+|---------------------|-------------------------------------------------------|----------|
+| `astrocore.use`     | Allows usage of the AstroCore commands.              | `false`  |
+| `astrocore.rename`  | Allows the player to rename items.                   | `false`  |
+| `astrocore.lore`    | Allows the player to set item lore.                  | `false`  |
+| `astrocore.plugins`  | Allows the player to see the list of installed plugins. | `op`     |
+| `astrocore.pv`      | Allows the player to access the player vault.        | `false`  |
+| `astrocore.fix`     | Allows the player to repair items.                   | `false`  |
+| `astrocore.heal`    | Allows the player to heal themselves.                | `false`  |
+| `astrocore.sethome` | Allows the player to set home locations.             | `false`  |
+| `astrocore.home`    | Allows the player to teleport to home locations.     | `false`  |
+| `astrocore.delhome` | Allows the player to delete home locations.          | `false`  |
+| `astrocore.homes`   | Allows the player to view their home locations.      | `false`  |
+| `astrocore.feed`    | Allows the player to feed themselves.                | `false`  |
+| `astrocore.spawn`   | Allows the player to set and teleport to spawn.      | `false`  |
+| `astrocore.clearChat`| Allows the player to clear the chat.                | `false`  |
+| `astrocore.god`     | Allows the player to use god mode.                   | `false`  |
+| `astrocore.smoke`   | Allows the player to get high.                        | `false`  |
+| `astrocore.snort`   | Allows the player to get high.                        | `false`  |
+| `astrocore.astrocore`| Enable/disable the plugin.                          | `op`     |
+| `astrocore.hello`   | Friendly hello message to the player.                | `false`  |
+| `astrocore.help`    | Directs you to the suicide hotline.                  | `op`     |
+
+
+---
+
 ## Troubleshooting
 
 - **Plugin Not Loading**: 
@@ -82,7 +111,6 @@ AstroCore provides a range of commands designed to enhance gameplay and offer un
     - Checking for conflicts with other installed plugins that might override or interfere with AstroCore's commands.
 
 If you continue to experience issues, please feel free to direct yourself over to unalive.me
-
 
 ---
 
