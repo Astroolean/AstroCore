@@ -115,7 +115,7 @@ public class AstroCore extends JavaPlugin implements Listener {
             "AstroCore", "hello", "help", "snort", "smoke", "gm", "t", "w", "cc",
             "god", "ac", "rename", "lore", "p", "pv", "fix", "heal", "sethome",
             "home", "delhome", "homes", "feed", "spawn", "lock", "freeze",
-            "showcoords", "uncraft", "autorod", "tos", "infinite"
+            "showcoords", "uncraft", "autorod", "tos", "near", "trash",
         }) {
             PluginCommand cmd = getCommand(command);
             if (cmd != null) {
