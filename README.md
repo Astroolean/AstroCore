@@ -33,7 +33,7 @@ Before running this plugin, ensure you have the following:
 
 ## Usage
 
-AstroCore provides a range of commands designed to enhance gameplay and offer unique features tailored to the Minecraft experience. The plugin is designed with both new and experienced players in mind, ensuring that everyone can enjoy the added functionalities.
+AstroCore provides a range of commands designed to enhance gameplay and offer unique features tailored to the Minecraft experience. The plugin is designed with both new and experienced players in mind, ensuring that everyone can enjoy the added functionalities. Over 30+ custom commands and or features...
 
 ### Command Overview
 
