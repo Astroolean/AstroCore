@@ -1,6 +1,6 @@
 name: AstroCore
 main: dev.astroolean.AstroCore
-version: 1.4
+version: 1.5
 api-version: 1.20
 authors: [ Astroolean ]
 description: My first plugin ever...
@@ -42,10 +42,10 @@ commands:
     usage: "/ac"
   rename:
     description: "Rename the item you are holding."
-    usage: "/rename <name>"
+    usage: "/rename [name]"
   lore:
     description: "Set lore for the item you are holding."
-    usage: "/lore <line> <text>"
+    usage: "/lore [line] [text]"
   p:
     description: "Shows the list of installed plugins if you are OP."
     usage: "/p"
@@ -76,6 +76,31 @@ commands:
   spawn:
     description: "Set and go to the fucking spawn."
     usage: "/spawn [set]"
+  lock:
+    description: "Lock the current time to day or night."
+    usage: "/lock [day/night]"
+  freeze:
+    description: "Freezes other players if your into that stuff."
+    usage: "/freeze [player] [time]"
+  showcoords:
+    description: "Shows your current coordinates within game chat."
+    usage: "/showcoords"
+  uncraft:
+    description: "Uncraft an item you are holding."
+    usage: "/uncraft [hand]"
+  autorod:
+    description: "Gives you a fishing rod that auto-fishes."
+    usage: "/autorod"
+  tos:
+    description: "Accept or deny the terms of service."
+    usage: "/tos [accept/deny]"
+  near:
+    description: "See who may be nearby."
+    usage: "/near"
+  trash:
+    description: "Throw useless garbage away for good."
+    usage: "/trash"
+
 
 permissions:
   astrocore.use:
@@ -137,4 +162,28 @@ permissions:
     default: false
   astrocore.help:
     description: Directs you to the suicide hotline.
+    default: false
+  astrocore.lock:
+    description: Allows the player to lock the time to day or night.
+    default: false
+  astrocore.freeze:
+    description: Freezes other players if your into that stuff.
+    default: false
+  astrocore.showcoords:
+    description: Shows your current coordinates within game chat.
+    default: false
+  astrocore.uncraft:
+    description: Uncraft an item you are holding.
+    default: false
+  astrocore.autorod:
+    description: Gives you a fishing rod that auto-fishes.
+    default: false
+  astrocore.tos:
+    description: Accept or deny the terms of service.
+    default: false
+  astrocore.near:
+    description: See who may be nearby.
+    default: false
+  astrocore.trash:
+    description: Throw useless garbage away for good.
     default: false
