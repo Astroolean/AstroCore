@@ -1,9 +1,8 @@
 <p align="center">
-    <img src="https://github.com/user-attachments/assets/61825b89-dc00-4ff8-89e2-36c834812bc5" alt="AstroCore Image" />
+    <img src="https://github.com/user-attachments/assets/b60afeff-a144-4dff-9e29-4d1dc60597fc" alt="AstroCore Image" />
 </p>
 
-
-**AstroCore** is a demonstration of a minecraft plugin I am creating. First ever Minecraft plugin. Very new to Java code. Issues and or problems are expected. This is purely for fun and or educational purposes. With the help of AI and trial and error; with the use of my knowledge of Python. Gave this a chance in order to fully learn. This is a public free and open-source minecraft plugin; available to anyone and all. I have a lot planned but little by little ill learn and continue to improve this even further along the way. This is only just the beginning... My coding journey continues here!
+**AstroCore** is a demonstration of a Minecraft plugin I am creating. It's my first-ever Minecraft plugin, and I'm very new to Java coding. Issues and problems are expected. This is purely for fun and educational purposes. With the help of AI and trial and error, along with my knowledge of Python, I decided to give this a chance to fully learn. This is a public, free, and open-source Minecraft plugin available to everyone. I have a lot planned, and I will continue to learn and improve it along the way. This is only just the beginning... My coding journey continues here!
 
 ---
 
@@ -16,7 +15,6 @@ Before running this plugin, ensure you have the following:
 - **Plugin Installation**: Familiarity with how to install plugins on a Minecraft server.
 - **Basic Configuration Knowledge**: Understanding how to modify configuration files for plugins.
 - **Permissions Plugin**: LuckPerms or another permissions plugin is required to set up permissions for this plugin.
-
 
 ---
 
@@ -49,45 +47,61 @@ AstroCore provides a range of commands designed to enhance gameplay and offer un
 - **/gm**: Opens the Gamemode GUI for easy mode switching.
 - **/t**: Opens the Time GUI for adjusting time settings.
 - **/w**: Opens the Weather GUI to change weather conditions.
-- **/rename**: Rename any item within the game. All color codes possible.
-- **/lore**: Add lore onto any item within the game. All color codes possible.
-- **/p**: Disabled the default plugins command. Introduces a custom one viewable to opped players only.
-- **/pv**: Player vaults, max 2 per player. Just like the OG days. One of the classics; extra storage.
-- **/fix**: The ability to repair items via a command specifying hand or all. Costs experience.
-- **/heal**: A command only availble to opped players that will heal you.
-- **/sethome**: A way for players to set a home in order to travel between places easier.
-- **/home**: The command that allows you to teleport from home to home. Making travel easier.
-- **/delhome**: A command that will delete a specified home via the name given.
-- **/homes**: A command that will list all of your current homes.
-- **/feed**: A command only availble to opped players that will feed you.
-- **/spawn**: Set and or teleport to spawn. Disables the spawnpoint command.
+- **/rename [name]**: Rename the item you are holding.
+- **/lore [line] [text]**: Set lore for the item you are holding.
+- **/p**: Shows the list of installed plugins if the player is OP.
+- **/pv [number]**: PlayerVault storage for players.
+- **/fix [hand/all]**: Repair items for experience.
+- **/heal**: Heal the player to full health (OP only).
+- **/sethome [name]**: Set a home location.
+- **/home [name]**: Teleport to a home location.
+- **/delhome [name]**: Delete a home location.
+- **/homes**: View current homes.
+- **/feed**: Feed the player (OP only).
+- **/spawn [set]**: Set and/or teleport to spawn.
+- **/lock [day/night]**: Lock the current time to day or night.
+- **/freeze [player] [time]**: Freeze other players.
+- **/showcoords**: Show current coordinates within game chat.
+- **/uncraft [hand]**: Uncraft an item you are holding.
+- **/autorod**: Gives a fishing rod that auto-fishes.
+- **/tos [accept/deny]**: Accept or deny the terms of service.
+- **/near**: See who may be nearby.
+- **/trash**: Throw useless garbage away for good.
 
 ---
 
 ## Permissions
 
-| Permission          | Description                                           | Default  |
-|---------------------|-------------------------------------------------------|----------|
-| `astrocore.use`     | Allows usage of the AstroCore commands.              | `false`  |
-| `astrocore.rename`  | Allows the player to rename items.                   | `false`  |
-| `astrocore.lore`    | Allows the player to set item lore.                  | `false`  |
-| `astrocore.plugins`  | Allows the player to see the list of installed plugins. | `op`     |
-| `astrocore.pv`      | Allows the player to access the player vault.        | `false`  |
-| `astrocore.fix`     | Allows the player to repair items.                   | `false`  |
-| `astrocore.heal`    | Allows the player to heal themselves.                | `false`  |
-| `astrocore.sethome` | Allows the player to set home locations.             | `false`  |
-| `astrocore.home`    | Allows the player to teleport to home locations.     | `false`  |
-| `astrocore.delhome` | Allows the player to delete home locations.          | `false`  |
-| `astrocore.homes`   | Allows the player to view their home locations.      | `false`  |
-| `astrocore.feed`    | Allows the player to feed themselves.                | `false`  |
-| `astrocore.spawn`   | Allows the player to set and teleport to spawn.      | `false`  |
-| `astrocore.clearChat`| Allows the player to clear the chat.                | `false`  |
-| `astrocore.god`     | Allows the player to use god mode.                   | `false`  |
-| `astrocore.smoke`   | Allows the player to get high.                        | `false`  |
-| `astrocore.snort`   | Allows the player to get high.                        | `false`  |
-| `astrocore.astrocore`| Enable/disable the plugin.                          | `op`     |
-| `astrocore.hello`   | Friendly hello message to the player.                | `false`  |
-| `astrocore.help`    | Directs you to the suicide hotline.                  | `false`     |
+| Permission            | Description                                           | Default  |
+|-----------------------|-------------------------------------------------------|----------|
+| `astrocore.use`       | Allows usage of the AstroCore commands.              | `false`  |
+| `astrocore.rename`    | Allows the player to rename items.                   | `false`  |
+| `astrocore.lore`      | Allows the player to set item lore.                  | `false`  |
+| `astrocore.plugins`    | Allows the player to see the list of installed plugins. | `op`     |
+| `astrocore.pv`        | Allows the player to access the player vault.        | `false`  |
+| `astrocore.fix`       | Allows the player to repair items.                   | `false`  |
+| `astrocore.heal`      | Allows the player to heal themselves.                | `false`  |
+| `astrocore.sethome`   | Allows the player to set home locations.             | `false`  |
+| `astrocore.home`      | Allows the player to teleport to home locations.     | `false`  |
+| `astrocore.delhome`   | Allows the player to delete home locations.          | `false`  |
+| `astrocore.homes`     | Allows the player to view their home locations.      | `false`  |
+| `astrocore.feed`      | Allows the player to feed themselves.                | `false`  |
+| `astrocore.spawn`     | Allows the player to set and teleport to spawn.      | `false`  |
+| `astrocore.clearChat` | Allows the player to clear the chat.                 | `false`  |
+| `astrocore.god`       | Allows the player to use god mode.                   | `false`  |
+| `astrocore.smoke`     | Allows the player to get high.                        | `false`  |
+| `astrocore.snort`     | Allows the player to get high.                        | `false`  |
+| `astrocore.astrocore` | Enable/disable the plugin.                           | `op`     |
+| `astrocore.hello`     | Friendly hello message to the player.                | `false`  |
+| `astrocore.help`      | Directs you to the mental health hotline.            | `false`  |
+| `astrocore.lock`      | Allows the player to lock the time to day or night.  | `false`  |
+| `astrocore.freeze`    | Allows the player to freeze other players.           | `false`  |
+| `astrocore.showcoords`| Allows the player to show their coordinates.         | `false`  |
+| `astrocore.uncraft`   | Allows the player to uncraft an item.                | `false`  |
+| `astrocore.autorod`   | Allows the player to use the auto-fishing rod.       | `false`  |
+| `astrocore.tos`   | Accept or deny the terms of service.   | `false`  |
+| `astrocore.near`      | Allows the player to see nearby players.             | `false`  |
+| `astrocore.trash`     | Allows the player to access the trash GUI.           | `false`  |
 
 
 ---
@@ -112,7 +126,7 @@ AstroCore provides a range of commands designed to enhance gameplay and offer un
     - Reviewing any configuration settings (if applicable) that might affect the plugin's functionality.
     - Checking for conflicts with other installed plugins that might override or interfere with AstroCore's commands.
 
-If you continue to experience issues, please feel free to direct yourself over to unalive.me
+If you continue to experience issues, please feel free to direct yourself over to unalive.me.
 
 ---
 
@@ -124,4 +138,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-For questions or feedback, please contact me @Astroolean on discord...
+For questions or feedback, please contact me @Astroolean on Discord.
