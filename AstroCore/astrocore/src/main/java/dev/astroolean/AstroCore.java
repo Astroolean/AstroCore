@@ -3,14 +3,25 @@ package dev.astroolean;
 import dev.astroolean.commands.*;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
+import org.bukkit.Bukkit;
+import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
 import org.bukkit.command.PluginCommand;
+import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class AstroCore extends JavaPlugin implements Listener {
@@ -28,9 +39,9 @@ public class AstroCore extends JavaPlugin implements Listener {
             playerDataDir.mkdirs();
         }
 
-        // Initialize PlayerVaultCommand and load player vaults
-        playerVaultCommand = new PlayerVaultCommand(this);
-        playerVaultCommand.loadVaults();
+        // Initialize PlayerVaultCommand and load vaults
+        playerVaultCommand = new PlayerVaultCommand(this); // Initialize here
+        playerVaultCommand.loadVaults(); // Now you can safely call loadVaults()
 
         // Display startup information
         LOGGER.info("AstroCore enabled");
@@ -75,9 +86,9 @@ public class AstroCore extends JavaPlugin implements Listener {
         registerCommand("god", new GodCommand(this));
         registerCommand("ac", new acCommand(this));
         registerCommand("rename", new RenameCommand(this));
-        registerCommand("lore", new RenameCommand(this));
+        registerCommand("lore", new RenameCommand(this)); // Corrected to LoreCommand
         registerCommand("p", new PluginsCommand(this));
-        registerCommand("pv", new PlayerVaultCommand(this));
+        registerCommand("pv", playerVaultCommand); // Use the initialized instance here
         registerCommand("fix", new RepairCommand(this));
         registerCommand("heal", new HealingCommand(this));
         registerCommand("sethome", new SetHomeCommand(this));
@@ -86,17 +97,96 @@ public class AstroCore extends JavaPlugin implements Listener {
         registerCommand("homes", new SetHomeCommand(this));
         registerCommand("feed", new FeedCommand(this));
         registerCommand("spawn", new WorldSpawnCommand(this));
+        registerCommand("lock", new WeatherLockCommand(this));
+        registerCommand("freeze", new FreezeCommand(this));
+        registerCommand("showcoords", new ShowCoordsCommand(this));
+        registerCommand("uncraft", new UncraftCommand(this));
+        registerCommand("autorod", new AutoRodCommand(this));
+        registerCommand("tos", new TOSCommand(this));
+        registerCommand("near", new NearCommand(this));
+        registerCommand("trash", new TrashCommand(this));
 
         // Register this class as a listener
         getServer().getPluginManager().registerEvents(this, this);
         getServer().getPluginManager().registerEvents(playerVaultCommand, this);
 
-
         // Register tab completer for commands
-        for (String command : new String[] {"AstroCore", "hello", "help", "snort", "smoke", "gm", "t", "w", "cc", "god", "ac", "rename", "lore", "p"}) {
+        for (String command : new String[] {
+            "AstroCore", "hello", "help", "snort", "smoke", "gm", "t", "w", "cc",
+            "god", "ac", "rename", "lore", "p", "pv", "fix", "heal", "sethome",
+            "home", "delhome", "homes", "feed", "spawn", "lock", "freeze",
+            "showcoords", "uncraft", "autorod", "tos", "infinite"
+        }) {
             PluginCommand cmd = getCommand(command);
             if (cmd != null) {
-                cmd.setTabCompleter(this); // Set this class as the tab completer
+                cmd.setTabCompleter((CommandSender sender, Command cmd1, String label, String[] args) -> {
+                    List<String> completions = new ArrayList<>();
+
+                    switch (cmd1.getName().toLowerCase()) {
+                        case "fix" -> {
+                            if (args.length == 1) {
+                                completions.addAll(Arrays.asList("hand", "all"));
+                            }
+                        }
+                        case "lock" -> {
+                            if (args.length == 1) {
+                                completions.addAll(Arrays.asList("day", "night"));
+                            }
+                        }
+                        case "pv" -> {
+                            if (args.length == 1) {
+                                completions.addAll(Arrays.asList("1", "2"));
+                            }
+                        }
+                        case "uncraft" -> {
+                            if (args.length == 1) {
+                                completions.addAll(Arrays.asList("hand"));
+                            }
+                        }
+                        case "tos" -> {
+                            if (args.length == 1) {
+                                completions.addAll(Arrays.asList("accept", "deny"));
+                            }
+                        }
+                        case "infinite" -> {
+                            switch (args.length) {
+                                case 1 -> completions.addAll(Arrays.asList("buy", "sell"));
+                                case 2 -> completions.addAll(Arrays.asList("water", "lava"));
+                                default -> {
+                                }
+                            }
+                        }
+                        case "freeze" -> {
+                            if (args.length == 1) {
+                                // Add online player names for the first argument
+                                Bukkit.getOnlinePlayers().forEach(player -> completions.add(player.getName()));
+                            } else if (args.length == 2) {
+                                completions.addAll(Arrays.asList("5", "10", "30", "60")); // Example times in seconds
+                            }
+                        }
+                        case "home", "delhome" -> {
+                            if (args.length == 1) {
+                                // Get home names from the player's data file
+                                if (sender instanceof Player player) {
+                                    UUID playerId = player.getUniqueId();
+                                    File playerFile = new File(getDataFolder() + "/PlayerData", playerId + ".yml");
+                                    FileConfiguration playerData = YamlConfiguration.loadConfiguration(playerFile);
+
+                                    ConfigurationSection homesSection = playerData.getConfigurationSection("homes");
+                                    if (homesSection != null) {
+                                        homesSection.getKeys(false).forEach(homeName -> completions.add(homeName));
+                                    }
+                                }
+                            }
+                        }
+                        // Add more cases as needed for other commands if tab completion options are required...
+                    }
+
+                    // Filter completions based on input
+                    return completions.stream()
+                        .filter(c -> c.toLowerCase().startsWith(args[args.length - 1].toLowerCase()))
+                        .toList();
+                });
             }
         }
     }
@@ -152,5 +242,4 @@ public class AstroCore extends JavaPlugin implements Listener {
             LOGGER.log(Level.INFO, "Command cancelled: {0}", command);
         }
     }
-
 }
