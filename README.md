@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/user-attachments/assets/b60afeff-a144-4dff-9e29-4d1dc60597fc" alt="AstroCore Image" />
+    <img src="https://github.com/user-attachments/assets/8c85146c-6b11-4878-beb2-1cb08c127f89" alt="AstroCore Image" />
 </p>
 
 **AstroCore** is a demonstration of a Minecraft plugin I am creating. It's my first-ever Minecraft plugin, and I'm very new to Java coding. Issues and problems are expected. This is purely for fun and educational purposes. With the help of AI and trial and error, along with my knowledge of Python, I decided to give this a chance to fully learn. This is a public, free, and open-source Minecraft plugin available to everyone. I have a lot planned, and I will continue to learn and improve it along the way. This is only just the beginning... My coding journey continues here!
@@ -33,7 +33,7 @@ Before running this plugin, ensure you have the following:
 
 ## Usage
 
-AstroCore provides a range of commands designed to enhance gameplay and offer unique features tailored to the Minecraft experience. The plugin is designed with both new and experienced players in mind, ensuring that everyone can enjoy the added functionalities. Over 30+ custom commands and or features...
+AstroCore provides a range of commands designed to enhance gameplay and offer unique features tailored to the Minecraft experience. The plugin is designed with both new and experienced players in mind, ensuring that everyone can enjoy the added functionalities. Over 40+ custom commands and or features...
 
 ### Command Overview
 
@@ -67,6 +67,17 @@ AstroCore provides a range of commands designed to enhance gameplay and offer un
 - **/tos [accept/deny]**: Accept or deny the terms of service.
 - **/near**: See who may be nearby.
 - **/trash**: Throw useless garbage away for good.
+- **/message [player]**: Send a message to another player.
+- **/reply [player]**: Replies to another player.
+- **/color [color/style]**: Provides color examples.
+- **/invsee [player]**: View another player's inventory for a short duration.
+- **/autoarmor [enable/disable]**: Automatically applies best armor within inventory.
+- **/autotool [enable/disable]**: Automatically applies best tool within inventory.
+- **/expfly**: Allows you to fly at a cost of 500 experience points every minute.
+- **/back**: Back to the last death location.
+- **/voidsafe [enable/disable]**: Fall into the void without the risk of dying.
+- **/hard [enable/disable]**: Don't do this while high.
+- **/explosion [enable/disable]**: Enable or disable creeper or tnt explosions.
 
 ---
 
@@ -77,7 +88,7 @@ AstroCore provides a range of commands designed to enhance gameplay and offer un
 | `astrocore.use`       | Allows usage of the AstroCore commands.              | `false`  |
 | `astrocore.rename`    | Allows the player to rename items.                   | `false`  |
 | `astrocore.lore`      | Allows the player to set item lore.                  | `false`  |
-| `astrocore.plugins`    | Allows the player to see the list of installed plugins. | `op`     |
+| `astrocore.plugins`   | Allows the player to see the list of installed plugins. | `op`     |
 | `astrocore.pv`        | Allows the player to access the player vault.        | `false`  |
 | `astrocore.fix`       | Allows the player to repair items.                   | `false`  |
 | `astrocore.heal`      | Allows the player to heal themselves.                | `false`  |
@@ -93,15 +104,26 @@ AstroCore provides a range of commands designed to enhance gameplay and offer un
 | `astrocore.snort`     | Allows the player to get high.                        | `false`  |
 | `astrocore.astrocore` | Enable/disable the plugin.                           | `op`     |
 | `astrocore.hello`     | Friendly hello message to the player.                | `false`  |
-| `astrocore.help`      | Directs you to the mental health hotline.            | `false`  |
+| `astrocore.help`      | Directs you to the suicide hotline.                  | `false`  |
 | `astrocore.lock`      | Allows the player to lock the time to day or night.  | `false`  |
-| `astrocore.freeze`    | Allows the player to freeze other players.           | `false`  |
-| `astrocore.showcoords`| Allows the player to show their coordinates.         | `false`  |
-| `astrocore.uncraft`   | Allows the player to uncraft an item.                | `false`  |
-| `astrocore.autorod`   | Allows the player to use the auto-fishing rod.       | `false`  |
-| `astrocore.tos`   | Accept or deny the terms of service.   | `false`  |
-| `astrocore.near`      | Allows the player to see nearby players.             | `false`  |
-| `astrocore.trash`     | Allows the player to access the trash GUI.           | `false`  |
+| `astrocore.freeze`    | Freezes other players if your into that stuff.       | `false`  |
+| `astrocore.showcoords`| Shows your current coordinates within game chat.     | `false`  |
+| `astrocore.uncraft`   | Uncraft an item you are holding.                     | `false`  |
+| `astrocore.autorod`   | Gives you a fishing rod that auto-fishes.             | `false`  |
+| `astrocore.tos`       | Accept or deny the terms of service.                 | `false`  |
+| `astrocore.near`      | See who may be nearby.                               | `false`  |
+| `astrocore.trash`     | Throw useless garbage away for good.                 | `false`  |
+| `astrocore.message`   | Send a message to another player.                    | `false`  |
+| `astrocore.color`     | Provides color examples.                             | `false`  |
+| `astrocore.invsee`    | View another player's inventory for a short duration.| `false`  |
+| `astrocore.autoarmor` | Automatically applies best armor within inventory.   | `false`  |
+| `astrocore.autotool`  | Automatically applies best tool within inventory.    | `false`  |
+| `astrocore.expfly`    | Allows you to fly at a cost of 500 experience points every minute. | `false` |
+| `astrocore.back`      | Back to the last death location.                     | `false`  |
+| `astrocore.voidsafe`  | Fall into the void without the risk of dying.        | `false`  |
+| `astrocore.hard`      | Don't do this while high.                            | `false`  |
+| `astrocore.explosion` | Enable or disable creeper or tnt explosions.         | `false`  |
+
 
 
 ---
