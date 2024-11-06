@@ -32,29 +32,29 @@ public class AstroCore extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-
+    
         // Create the PlayerData directory if it doesn't exist
         File playerDataDir = new File(getDataFolder(), "PlayerData");
         if (!playerDataDir.exists()) {
             playerDataDir.mkdirs();
         }
-
+    
         // Initialize PlayerVaultCommand and load vaults
         playerVaultCommand = new PlayerVaultCommand(this); // Initialize here
         playerVaultCommand.loadVaults(); // Now you can safely call loadVaults()
-
+    
         // Display startup information
         LOGGER.info("AstroCore enabled");
         LOGGER.info("""
-
+    
                                ____________________________
                               |                            |
                               |      AstroCore Plugin      |
-                              |            V1.4            |
+                              |            V1.6            |
                               |____________________________|
-
+    
                               My first plugin has started...
-
+    
                                class AstrooleanSignature:
                                    def __init__(self, NAME="Astroolean"):
                                        self.NAME = NAME
@@ -64,15 +64,15 @@ public class AstroCore extends JavaPlugin implements Listener {
                                        return f"/nSignature:/n{Astro}/n{Boolean}/nAll-in-all it's just Astroolean."
                                Astroolean = AstrooleanSignature()
                                print(Astroolean.Signature())
-
+    
                                Absolutely free and open-source for all to use and enjoy...
-
+    
                """);
-
+    
         // Initialize and enable AutoLongDay
         autoLongDay = new AutoLongDay();
         autoLongDay.onEnable(this);
-
+    
         // Register commands
         registerCommand("AstroCore", new AstroCoreCommand(this));
         registerCommand("hello", new HelloCommand(this));
@@ -86,9 +86,9 @@ public class AstroCore extends JavaPlugin implements Listener {
         registerCommand("god", new GodCommand(this));
         registerCommand("ac", new acCommand(this));
         registerCommand("rename", new RenameCommand(this));
-        registerCommand("lore", new RenameCommand(this)); // Corrected to LoreCommand
+        registerCommand("lore", new RenameCommand(this));
         registerCommand("p", new PluginsCommand(this));
-        registerCommand("pv", playerVaultCommand); // Use the initialized instance here
+        registerCommand("pv", playerVaultCommand);
         registerCommand("fix", new RepairCommand(this));
         registerCommand("heal", new HealingCommand(this));
         registerCommand("sethome", new SetHomeCommand(this));
@@ -105,23 +105,41 @@ public class AstroCore extends JavaPlugin implements Listener {
         registerCommand("tos", new TOSCommand(this));
         registerCommand("near", new NearCommand(this));
         registerCommand("trash", new TrashCommand(this));
-
+        registerCommand("message", new MessageCommand(this));
+        registerCommand("reply", new MessageCommand(this));
+        registerCommand("color", new ColorCommand(this));
+        registerCommand("invsee", new InvseeCommand(this));
+        registerCommand("autoarmor", new AutoArmorCommand(this));
+        registerCommand("autotool", new AutoToolCommand(this));
+        registerCommand("expfly", new ExpFlyCommand(this));
+        registerCommand("back", new BackCommand(this));
+        registerCommand("voidsafe", new VoidSafeCommand(this));
+        registerCommand("hard", new HardCommand(this));
+        registerCommand("explosion", new ExplosionCommand(this));
+    
         // Register this class as a listener
         getServer().getPluginManager().registerEvents(this, this);
         getServer().getPluginManager().registerEvents(playerVaultCommand, this);
-
+        getServer().getPluginManager().registerEvents(new ColorCommand(this), this);
+        getServer().getPluginManager().registerEvents(new AutoArmorCommand(this), this);
+        getServer().getPluginManager().registerEvents(new AutoToolCommand(this), this);
+        getServer().getPluginManager().registerEvents(new BackCommand(this), this);
+        getServer().getPluginManager().registerEvents(new ExplosionCommand(this), this);
+    
         // Register tab completer for commands
         for (String command : new String[] {
             "AstroCore", "hello", "help", "snort", "smoke", "gm", "t", "w", "cc",
             "god", "ac", "rename", "lore", "p", "pv", "fix", "heal", "sethome",
             "home", "delhome", "homes", "feed", "spawn", "lock", "freeze",
-            "showcoords", "uncraft", "autorod", "tos", "near", "trash",
+            "showcoords", "uncraft", "autorod", "tos", "near", "trash", "message", 
+            "color", "invsee", "autoarmor", "autotool", "expfly", "back", "voidsafe",
+            "hard", "explosion"
         }) {
             PluginCommand cmd = getCommand(command);
             if (cmd != null) {
                 cmd.setTabCompleter((CommandSender sender, Command cmd1, String label, String[] args) -> {
                     List<String> completions = new ArrayList<>();
-
+    
                     switch (cmd1.getName().toLowerCase()) {
                         case "fix" -> {
                             if (args.length == 1) {
@@ -131,6 +149,11 @@ public class AstroCore extends JavaPlugin implements Listener {
                         case "lock" -> {
                             if (args.length == 1) {
                                 completions.addAll(Arrays.asList("day", "night"));
+                            }
+                        }
+                        case "spawn" -> {
+                            if (args.length == 1) {
+                                completions.addAll(Arrays.asList("set"));
                             }
                         }
                         case "pv" -> {
@@ -148,12 +171,35 @@ public class AstroCore extends JavaPlugin implements Listener {
                                 completions.addAll(Arrays.asList("accept", "deny"));
                             }
                         }
-                        case "infinite" -> {
-                            switch (args.length) {
-                                case 1 -> completions.addAll(Arrays.asList("buy", "sell"));
-                                case 2 -> completions.addAll(Arrays.asList("water", "lava"));
-                                default -> {
-                                }
+                        case "autoarmor" -> {
+                            if (args.length == 1) {
+                                completions.addAll(Arrays.asList("enable", "disable"));
+                            }
+                        }
+                        case "explosion" -> {
+                            if (args.length == 1) {
+                                completions.addAll(Arrays.asList("enable", "disable"));
+                            }
+                        }
+                        case "hard" -> {
+                            if (args.length == 1) {
+                                completions.addAll(Arrays.asList("enable", "disable"));
+                            }
+                        }
+                        case "voidsafe" -> {
+                            if (args.length == 1) {
+                                completions.addAll(Arrays.asList("enable", "disable"));
+                            }
+                        }
+                        case "autotool" -> {
+                            if (args.length == 1) {
+                                completions.addAll(Arrays.asList("enable", "disable"));
+                            }
+                        }
+                        case "invsee" -> {
+                            if (args.length == 1) {
+                                // Add online player names for the first argument
+                                Bukkit.getOnlinePlayers().forEach(player -> completions.add(player.getName()));
                             }
                         }
                         case "freeze" -> {
@@ -171,7 +217,7 @@ public class AstroCore extends JavaPlugin implements Listener {
                                     UUID playerId = player.getUniqueId();
                                     File playerFile = new File(getDataFolder() + "/PlayerData", playerId + ".yml");
                                     FileConfiguration playerData = YamlConfiguration.loadConfiguration(playerFile);
-
+    
                                     ConfigurationSection homesSection = playerData.getConfigurationSection("homes");
                                     if (homesSection != null) {
                                         homesSection.getKeys(false).forEach(homeName -> completions.add(homeName));
@@ -179,9 +225,20 @@ public class AstroCore extends JavaPlugin implements Listener {
                                 }
                             }
                         }
+                        case "color" -> {
+                            if (args.length == 1) {
+                                // Add color options for tab completion
+                                completions.addAll(Arrays.asList(
+                                    "black", "dark_blue", "dark_green", "dark_aqua", "dark_red", "dark_purple",
+                                    "gold", "gray", "dark_gray", "blue", "green", "aqua", "red",
+                                    "light_purple", "yellow", "white", "bold", "underline", "italic",
+                                    "strikethrough", "magic", "reset"
+                                ));
+                            }
+                        }
                         // Add more cases as needed for other commands if tab completion options are required...
                     }
-
+    
                     // Filter completions based on input
                     return completions.stream()
                         .filter(c -> c.toLowerCase().startsWith(args[args.length - 1].toLowerCase()))
@@ -190,6 +247,7 @@ public class AstroCore extends JavaPlugin implements Listener {
             }
         }
     }
+    
 
     private void registerCommand(String commandName, CommandExecutor executor) {
         PluginCommand command = this.getCommand(commandName);
@@ -237,6 +295,20 @@ public class AstroCore extends JavaPlugin implements Listener {
 
         // Check for the /spawnpoint command
         if (command.startsWith("/spawnpoint")) {
+            event.getPlayer().sendMessage("You cannot use this command.");
+            event.setCancelled(true);
+            LOGGER.log(Level.INFO, "Command cancelled: {0}", command);
+        }
+
+        // Check for the /spawnpoint command
+        if (command.startsWith("/msg")) {
+            event.getPlayer().sendMessage("You cannot use this command.");
+            event.setCancelled(true);
+            LOGGER.log(Level.INFO, "Command cancelled: {0}", command);
+        }
+
+        // Check for the /spawnpoint command
+        if (command.startsWith("/whisper")) {
             event.getPlayer().sendMessage("You cannot use this command.");
             event.setCancelled(true);
             LOGGER.log(Level.INFO, "Command cancelled: {0}", command);
