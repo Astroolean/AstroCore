@@ -1,6 +1,6 @@
 name: AstroCore
 main: dev.astroolean.AstroCore
-version: 1.5
+version: 1.6
 api-version: 1.20
 authors: [ Astroolean ]
 description: My first plugin ever...
@@ -100,6 +100,39 @@ commands:
   trash:
     description: "Throw useless garbage away for good."
     usage: "/trash"
+  message:
+    description: "Send a message to another player."
+    usage: "/message [player]"
+  reply:
+    description: "Replies to another player."
+    usage: "/reply [player]"
+  color:
+    description: "Provides color examples."
+    usage: "/color [color/style]"
+  invsee:
+    description: "View another players inventory for a short duration."
+    usage: "/invsee [player]"
+  autoarmor:
+    description: "Automatically applies best armor within inventory."
+    usage: "/autoarmor [enable/disable]"
+  autotool:
+    description: "Automatically applies best tool within inventory."
+    usage: "/autotool [enable/disable]"
+  expfly:
+    description: "Allows you to fly at a cost of 500 experience points every minute."
+    usage: "/expfly"
+  back:
+    description: "Back to the last death location."
+    usage: "/back"
+  voidsafe:
+    description: "Fall into the void without the risk of dying."
+    usage: "/voidsafe [enable/disable]"
+  hard:
+    description: "Don't do this while high."
+    usage: "/hard [enable/disable]"
+  explosion:
+    description: "Enable or disable creeper or tnt explosions."
+    usage: "/explosion [enable/disable]"
 
 
 permissions:
@@ -186,4 +219,34 @@ permissions:
     default: false
   astrocore.trash:
     description: Throw useless garbage away for good.
+    default: false
+  astrocore.message:
+    description: Send a message to another player.
+    default: false
+  astrocore.color:
+    description: Provides color examples.
+    default: false
+  astrocore.invsee:
+    description: View another players inventory for a short duration.
+    default: false
+  astrocore.autoarmor:
+    description: Automatically applies best armor within inventory.
+    default: false
+  astrocore.autotool:
+    description: Automatically applies best tool within inventory.
+    default: false
+  astrocore.expfly:
+    description: Allows you to fly at a cost of 500 experience points every minute.
+    default: false
+  astrocore.back:
+    description: Back to the last death location.
+    default: 
+  astrocore.voidsafe:
+    description: Fall into the void without the risk of dying.
+    default: false
+  astrocore.hard:
+    description: Don't do this while high.
+    default: false
+  astrocore.explosion:
+    description: Enable or disable creeper or tnt explosions.
     default: false
