@@ -65,28 +65,46 @@ public class acCommand implements CommandExecutor {
         List<String> descriptions = new ArrayList<>();
 
         // Add commands and descriptions
-        commands.add("/astrocore"); descriptions.add("Enable or disable AstroCore.");
-        commands.add("/hello"); descriptions.add("Say hello.");
-        commands.add("/help"); descriptions.add("Get help and resources.");
-        commands.add("/god"); descriptions.add("Gain invincibility and flight.");
-        commands.add("/cc"); descriptions.add("Clear chat.");
-        commands.add("/smoke"); descriptions.add("Consume 16 green dye.");
-        commands.add("/snort"); descriptions.add("Consume 16 sugar.");
-        commands.add("/gm"); descriptions.add("Open Gamemode menu.");
-        commands.add("/t"); descriptions.add("Open Time menu.");
-        commands.add("/w"); descriptions.add("Open Weather menu.");
-        commands.add("/rename"); descriptions.add("Rename an item.");
-        commands.add("/lore"); descriptions.add("Add lore to an item.");
-        commands.add("/p"); descriptions.add("Disable default plugins command.");
-        commands.add("/pv"); descriptions.add("Use player vaults (max 2).");
-        commands.add("/fix"); descriptions.add("Repair items (costs XP).");
-        commands.add("/heal"); descriptions.add("Heal yourself (OP only).");
+        commands.add("/hello"); descriptions.add("A friendly Hello command...");
+        commands.add("/help"); descriptions.add("An anti-help command...");
+        commands.add("/snort"); descriptions.add("Consume cocaine to gain effects...");
+        commands.add("/smoke"); descriptions.add("Consume weed to gain effects...");
+        commands.add("/gm"); descriptions.add("Open the game mode selection GUI");
+        commands.add("/t"); descriptions.add("Open the time selection GUI");
+        commands.add("/w"); descriptions.add("Open the weather selection GUI");
+        commands.add("/cc"); descriptions.add("Clears the fucking chat...");
+        commands.add("/god"); descriptions.add("Gives absolute godmode...");
+        commands.add("/rename"); descriptions.add("Rename the item you are holding.");
+        commands.add("/lore"); descriptions.add("Set lore for the item you are holding.");
+        commands.add("/p"); descriptions.add("Shows the list of installed plugins if you are OP.");
+        commands.add("/pv"); descriptions.add("PlayerVault storage for players...");
+        commands.add("/fix"); descriptions.add("Repair your fucking items you lazy bum...");
+        commands.add("/heal"); descriptions.add("Heal yourself to full health.");
         commands.add("/sethome"); descriptions.add("Set a home location.");
-        commands.add("/home"); descriptions.add("Teleport to your home.");
-        commands.add("/delhome"); descriptions.add("Delete a specified home.");
-        commands.add("/homes"); descriptions.add("List all your homes.");
-        commands.add("/feed"); descriptions.add("Feed yourself (OP only).");
-        commands.add("/spawn"); descriptions.add("Set or teleport to spawn.");
+        commands.add("/home"); descriptions.add("Teleport to a home location.");
+        commands.add("/delhome"); descriptions.add("Delete a home location.");
+        commands.add("/homes"); descriptions.add("View your current homes.");
+        commands.add("/feed"); descriptions.add("Go ahead and feed yourself.");
+        commands.add("/spawn"); descriptions.add("Set and go to the fucking spawn.");
+        commands.add("/lock"); descriptions.add("Lock the current time to day or night.");
+        commands.add("/freeze"); descriptions.add("Freezes other players if your into that stuff.");
+        commands.add("/showcoords"); descriptions.add("Shows your current coordinates within game chat.");
+        commands.add("/uncraft"); descriptions.add("Uncraft an item you are holding.");
+        commands.add("/autorod"); descriptions.add("Gives you a fishing rod that auto-fishes.");
+        commands.add("/tos"); descriptions.add("Accept or deny the terms of service.");
+        commands.add("/near"); descriptions.add("See who may be nearby.");
+        commands.add("/trash"); descriptions.add("Throw useless garbage away for good.");
+        commands.add("/message"); descriptions.add("Send a message to another player.");
+        commands.add("/reply"); descriptions.add("Replies to another player.");
+        commands.add("/color"); descriptions.add("Provides color examples.");
+        commands.add("/invsee"); descriptions.add("View another players inventory for a short duration.");
+        commands.add("/autoarmor"); descriptions.add("Automatically applies best armor within inventory.");
+        commands.add("/autotool"); descriptions.add("Automatically applies best tool within inventory.");
+        commands.add("/expfly"); descriptions.add("Allows you to fly at a cost of 500 experience points every minute.");
+        commands.add("/back"); descriptions.add("Back to the last death location.");
+        commands.add("/voidsafe"); descriptions.add("Fall into the void without the risk of dying.");
+        commands.add("/hard"); descriptions.add("Don't do this while high.");
+        commands.add("/explosion"); descriptions.add("Enable or disable creeper or tnt explosions.");
 
         // Calculate the start and end index based on the page number
         int startIndex = (page - 1) * 10; // 10 commands per page
@@ -107,7 +125,7 @@ public class acCommand implements CommandExecutor {
         if (endIndex < commands.size()) {
             player.sendMessage(ChatColor.DARK_AQUA + "Type /ac " + (page + 1) + " for more commands.");
         }
-        if (page > 1) {
+        if (startIndex > 0) {
             player.sendMessage(ChatColor.DARK_AQUA + "Type /ac " + (page - 1) + " to go back.");
         }
     }
