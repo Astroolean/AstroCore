@@ -5,20 +5,19 @@ import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 public class WorldSpawnCommand implements CommandExecutor {
 
-    @SuppressWarnings("unused")
     private final JavaPlugin plugin;
     private Location spawnLocation; // Default spawn location
 
     public WorldSpawnCommand(JavaPlugin plugin) {
         this.plugin = plugin;
-        // Initialize with default spawn location (can be modified)
-        this.spawnLocation = new Location(plugin.getServer().getWorlds().get(0), 0, 100, 0); // Example coordinates
+        loadSpawnLocation(); // Load the spawn location from config on initialization
     }
 
     @Override
@@ -26,12 +25,6 @@ public class WorldSpawnCommand implements CommandExecutor {
         // Check if the sender is not null
         if (sender == null) {
             return true; // No action needed for null sender
-        }
-
-        // Check if the sender has permission for the "spawn" command
-        if (!sender.hasPermission("astrocore.spawn")) {
-            sender.sendMessage(ChatColor.RED + "You do not have permission.");
-            return true;
         }
 
         // Assuming 'plugin' is an instance of dev.astroolean.Plugin
@@ -46,31 +39,60 @@ public class WorldSpawnCommand implements CommandExecutor {
         if (!myPlugin.isEnabledCustom()) {
             sender.sendMessage(ChatColor.RED + "AstroCore plugin is currently disabled.");
             return true;
-        }      
+        }        
 
-        // Check if the sender is a player
         if (!(sender instanceof Player player)) {
             sender.sendMessage(ChatColor.RED + "This command can only be used by players.");
             return true;
         }
 
-        // Handle command arguments
+        if (!sender.hasPermission("astrocore.spawn")) {
+            sender.sendMessage(ChatColor.RED + "You do not have permission.");
+            return true;
+        }
+
         if (args.length == 0) {
-            // Teleport the player to the spawn location
             player.teleport(spawnLocation);
             player.sendMessage(ChatColor.GREEN + "You have been teleported to the spawn location.");
             return true;
         }
 
         if (args.length == 1 && args[0].equalsIgnoreCase("set")) {
-            // Set the spawn location to the player's current location
             spawnLocation = player.getLocation();
+            saveSpawnLocation(); // Save the new spawn location to config
             player.sendMessage(ChatColor.GREEN + "Spawn location has been set to your current location.");
             return true;
         }
 
-        // Invalid command usage
         player.sendMessage(ChatColor.RED + "Usage: /spawn to teleport or /spawn set to set spawn location.");
         return true;
+    }
+
+    private void saveSpawnLocation() {
+        FileConfiguration config = plugin.getConfig();
+        config.set("spawn.world", spawnLocation.getWorld().getName());
+        config.set("spawn.x", spawnLocation.getX());
+        config.set("spawn.y", spawnLocation.getY());
+        config.set("spawn.z", spawnLocation.getZ());
+        config.set("spawn.yaw", spawnLocation.getYaw());
+        config.set("spawn.pitch", spawnLocation.getPitch());
+        plugin.saveConfig();
+    }
+
+    private void loadSpawnLocation() {
+        FileConfiguration config = plugin.getConfig();
+        if (config.contains("spawn.world")) {
+            String worldName = config.getString("spawn.world");
+            double x = config.getDouble("spawn.x");
+            double y = config.getDouble("spawn.y");
+            double z = config.getDouble("spawn.z");
+            float yaw = (float) config.getDouble("spawn.yaw");
+            float pitch = (float) config.getDouble("spawn.pitch");
+
+            spawnLocation = new Location(plugin.getServer().getWorld(worldName), x, y, z, yaw, pitch);
+        } else {
+            // Default spawn location if not set in config
+            spawnLocation = plugin.getServer().getWorlds().get(0).getSpawnLocation();
+        }
     }
 }
