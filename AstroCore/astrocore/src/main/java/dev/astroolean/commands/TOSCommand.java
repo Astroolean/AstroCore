@@ -1,6 +1,8 @@
 package dev.astroolean.commands;
 
 import org.bukkit.ChatColor;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeInstance;
 import org.bukkit.entity.Player;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -80,19 +82,27 @@ public class TOSCommand implements CommandExecutor, Listener {
         }
     }
 
-    public void freezePlayer(Player player) {
-        if (!isFrozen(player)) {
-            frozenPlayers.add(player.getUniqueId());
-            player.setWalkSpeed(0); // Freezing player by setting walk speed to 0
+public void freezePlayer(Player player) {
+    if (!isFrozen(player)) {
+        frozenPlayers.add(player.getUniqueId());
+        player.setWalkSpeed(0); // Freezing player by setting walk speed to 0
+        player.setInvulnerable(true); // Make player invincible
+        
+        // Set the player's health to maximum using the Attribute system
+        AttributeInstance healthAttribute = player.getAttribute(Attribute.GENERIC_MAX_HEALTH);
+        if (healthAttribute != null) {
+            player.setHealth(healthAttribute.getValue()); // Ensure the player is at full health
         }
     }
+}
 
-    public void unfreezePlayer(Player player) {
-        if (isFrozen(player)) {
-            frozenPlayers.remove(player.getUniqueId());
-            player.setWalkSpeed(0.2f); // Resetting walk speed
-        }
+public void unfreezePlayer(Player player) {
+    if (isFrozen(player)) {
+        frozenPlayers.remove(player.getUniqueId());
+        player.setWalkSpeed(0.2f); // Resetting walk speed
+        player.setInvulnerable(false); // Remove invincibility
     }
+}
 
     public boolean isFrozen(Player player) {
         return frozenPlayers.contains(player.getUniqueId());
