@@ -75,10 +75,12 @@ public class GodCommand implements CommandExecutor, Listener {
             // Disable God Mode
             player.setAllowFlight(false);
             player.setFlying(false); // Ensure player is not flying
+            player.setInvulnerable(false); // Make player invincible
             player.sendMessage(ChatColor.RED + "God Mode is now OFF.");
         } else {
             // Enable God Mode
             player.setAllowFlight(true);
+            player.setInvulnerable(true); // Make player invincible
             player.sendMessage(ChatColor.GREEN + "God Mode is now ON.");
         }
     }
