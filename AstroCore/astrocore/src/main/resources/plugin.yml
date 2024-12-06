@@ -1,0 +1,188 @@
+name: AstroCore
+main: dev.astroolean.AstroCore
+version: 1.7
+api-version: 1.20
+authors: [ Astroolean ]
+description: My first plugin ever...
+website: astroolean.dev
+depend: []
+commands:
+  astrocore:
+    description: "Enable or disable the AstroCore plugin..."
+    usage: "/astrocore"
+    permission: astrocore.use
+  gm:
+    description: "Open the game mode selection GUI"
+    usage: "/gm"
+    permission: astrocore.gm
+  t:
+    description: "Open the time selection GUI"
+    usage: "/t"
+    permission: astrocore.t
+  w:
+    description: "Open the weather selection GUI"
+    usage: "/w"
+    permission: astrocore.w
+  cc:
+    description: "Clears the chat..."
+    usage: "/cc"
+    permission: astrocore.clearChat
+  god:
+    description: "Gives absolute godmode..."
+    usage: "/god"
+    permission: astrocore.god
+  help:
+    description: "Provides basic information about the plugin..."
+    usage: "/help"
+  rename:
+    description: "Rename the item you are holding."
+    usage: "/rename [name]"
+    permission: astrocore.rename
+  lore:
+    description: "Set lore for the item you are holding."
+    usage: "/lore [line] [text]"
+    permission: astrocore.lore
+  pv:
+    description: "PlayerVault storage for players..."
+    usage: "/pv [number]"
+    permission: astrocore.pv
+  fix:
+    description: "Repair your fucking items..."
+    usage: "/fix [hand/all]"
+    permission: astrocore.fix
+  heal:
+    description: "Heal yourself to full health."
+    usage: "/heal"
+    permission: astrocore.heal
+  sethome:
+    description: "Set a home location."
+    usage: "/sethome [name]"
+    permission: astrocore.sethome
+  home:
+    description: "Teleport to a home location."
+    usage: "/home [name]"
+    permission: astrocore.home
+  delhome:
+    description: "Delete a home location."
+    usage: "/delhome [name]"
+    permission: astrocore.delhome
+  homes:
+    description: "View your current homes."
+    usage: "/homes"
+    permission: astrocore.homes
+  feed:
+    description: "Go ahead and feed yourself."
+    usage: "/feed"
+    permission: astrocore.feed
+  spawn:
+    description: "Set and go to the fucking spawn."
+    usage: "/spawn [set]"
+    permission: astrocore.spawn
+  lock:
+    description: "Lock the current time to day or night."
+    usage: "/lock [day/night]"
+    permission: astrocore.lock
+  freeze:
+    description: "Freezes other players if you're into that stuff."
+    usage: "/freeze [player] [time]"
+    permission: astrocore.freeze
+  showcoords:
+    description: "Shows your current coordinates within game chat."
+    usage: "/showcoords"
+    permission: astrocore.showcoords
+  uncraft:
+    description: "Uncraft an item you are holding."
+    usage: "/uncraft [hand]"
+    permission: astrocore.uncraft
+  autorod:
+    description: "Gives you a fishing rod that auto-fishes."
+    usage: "/autorod"
+    permission: astrocore.autorod
+  tos:
+    description: "Accept or deny the terms of service."
+    usage: "/tos [accept/deny]"
+    permission: astrocore.tos
+  near:
+    description: "See who may be nearby."
+    usage: "/near"
+    permission: astrocore.near
+  trash:
+    description: "Throw useless garbage away for good."
+    usage: "/trash"
+    permission: astrocore.trash
+  message:
+    description: "Send a message to another player."
+    usage: "/message [player]"
+    permission: astrocore.message
+  reply:
+    description: "Replies to another player."
+    usage: "/reply [player]"
+    permission: astrocore.reply
+  color:
+    description: "Provides color examples."
+    usage: "/color [color/style]"
+    permission: astrocore.color
+  invsee:
+    description: "View another player's inventory for a short duration."
+    usage: "/invsee [player]"
+    permission: astrocore.invsee
+  autoarmor:
+    description: "Automatically applies best armor within inventory."
+    usage: "/autoarmor [enable/disable]"
+    permission: astrocore.autoarmor
+  autotool:
+    description: "Automatically applies best tool within inventory."
+    usage: "/autotool [enable/disable]"
+    permission: astrocore.autotool
+  expfly:
+    description: "Allows you to fly at a cost of 500 experience points every minute."
+    usage: "/expfly"
+    permission: astrocore.expfly
+  back:
+    description: "Back to the last death location."
+    usage: "/back"
+    permission: astrocore.back
+  voidsafe:
+    description: "Fall into the void without the risk of dying."
+    usage: "/voidsafe [enable/disable]"
+    permission: astrocore.voidsafe
+  hard:
+    description: "Makes the game very difficult."
+    usage: "/hard [enable/disable]"
+    permission: astrocore.hard
+  explosion:
+    description: "Enable or disable creeper or TNT explosions."
+    usage: "/explosion [enable/disable]"
+    permission: astrocore.explosion
+  multibreak:
+    description: "Allows you to break 3x3x3 at a cost of 500 experience points every minute."
+    usage: "/multibreak"
+    permission: astrocore.multibreak
+  nickname:
+    description: "Give yourself a nickname of choice; costs experience."
+    usage: "/nickname [name/reset]"
+    permission: astrocore.nickname
+  whois:
+    description: "Find out who someone is."
+    usage: "/whois [player]"
+    permission: astrocore.whois
+  show:
+    description: "Show off your numerous items and stuff."
+    usage: "/show [hand]"
+    permission: astrocore.show
+  clone:
+    description: "Why dupe when you can do it legally; costs experience..."
+    usage: "/clone [hand]"
+    permission: astrocore.clone
+  broadcast:
+    description: "Broadcast your message to the server at the cost of experience."
+    usage: "/broadcast [message]"
+    permission: astrocore.broadcast
+  autotorch:
+    description: "Automatically place torches depending on light level efficiently."
+    usage: "/autotorch [enable/disable]"
+    permission: astrocore.autotorch
+  morexp:
+    description: "Gives xp based on what you do. Mining, farming, etc..."
+    usage: "/morexp [enable/disable]"
+    permission: astrocore.morexp
