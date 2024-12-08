@@ -113,6 +113,15 @@ public class HelpCommand implements CommandExecutor {
         commands.add("/broadcast"); descriptions.add("Broadcast your message to the server at the cost of experience.");
         commands.add("/autotorch"); descriptions.add("Automatically place torches depending on light level efficiently.");
         commands.add("/morexp"); descriptions.add("Gives xp based on what you do throughout the game.");
+        commands.add("/combine"); descriptions.add("Combine potions with anything in your main hand.");
+        commands.add("/gravity"); descriptions.add("Moon-like gravity to traverse the world itself.");
+        commands.add("/blink"); descriptions.add("Teleport a short distance in any direction.");
+        commands.add("/itemroll"); descriptions.add("Allows the player to roll for random stuff.");
+        commands.add("/infinite"); descriptions.add("Purchase infinite water/lava bucket via experience.");
+        commands.add("/boost"); descriptions.add("As fast as the flash; costs experience.");
+        
+        commands.add("/border"); descriptions.add("Make/remove a square world border.");
+        commands.add("/rtp"); descriptions.add("Random teleport throughout your world.");
 
         // Calculate the start and end index based on the page number
         int startIndex = (page - 1) * 10; // 10 commands per page
