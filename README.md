@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/user-attachments/assets/9bd7505e-b55d-4753-b8f5-afe3cf9cf44f" alt="AstroCore Image" />
+    <img src="https://github.com/user-attachments/assets/b43bb3d0-a75a-47a7-a069-7f1729f22bc3" alt="AstroCore Image" />
 </p>
 
 **AstroCore** is a demonstration of a Minecraft plugin I am creating. It's my first-ever Minecraft plugin, and I'm very new to Java coding. Issues and problems are expected. This is purely for fun and educational purposes. With the help of AI and trial and error, along with my knowledge of Python, I decided to give this a chance to fully learn. This is a public, free, and open-source Minecraft plugin available to everyone. I have a lot planned, and I will continue to learn and improve it along the way. This is only just the beginning... My coding journey continues here!
@@ -33,7 +33,7 @@ Before running this plugin, ensure you have the following:
 
 ## Usage
 
-AstroCore provides a range of commands designed to enhance gameplay and offer unique features tailored to the Minecraft experience. The plugin is designed with both new and experienced players in mind, ensuring that everyone can enjoy the added functionalities. Over 40+ custom commands and or features...
+AstroCore provides a range of commands designed to enhance gameplay and offer unique features tailored to the Minecraft experience. The plugin is designed with both new and experienced players in mind, ensuring that everyone can enjoy the added functionalities. Over 50+ custom commands and or features...
 
 ### Command Overview
 
@@ -46,43 +46,50 @@ AstroCore provides a range of commands designed to enhance gameplay and offer un
 7. **/w**: Opens the Weather GUI to change weather conditions.
 8. **/rename [name]**: Rename the item you are holding.
 9. **/lore [line] [text]**: Set lore for the item you are holding.
-10. **/p**: Shows the list of installed plugins if the player is OP.
-11. **/pv [number]**: PlayerVault storage for players.
-12. **/fix [hand/all]**: Repair items for experience.
-13. **/heal**: Heal the player to full health (OP only).
-14. **/sethome [name]**: Set a home location.
-15. **/home [name]**: Teleport to a home location.
-16. **/delhome [name]**: Delete a home location.
-17. **/homes**: View current homes.
-18. **/feed**: Feed the player (OP only).
-19. **/spawn [set]**: Set and/or teleport to spawn.
-20. **/lock [day/night]**: Lock the current time to day or night.
-21. **/freeze [player] [time]**: Freeze other players.
-22. **/showcoords**: Show current coordinates within game chat.
-23. **/uncraft [hand]**: Uncraft an item you are holding.
-24. **/autorod**: Gives a fishing rod that auto-fishes.
-25. **/tos [accept/deny]**: Accept or deny the terms of service.
-26. **/near**: See who may be nearby.
-27. **/trash**: Throw useless garbage away for good.
-28. **/message [player]**: Send a message to another player.
-29. **/reply [player]**: Replies to another player.
-30. **/color [color/style]**: Provides color examples.
-31. **/invsee [player]**: View another player's inventory for a short duration.
-32. **/autoarmor [enable/disable]**: Automatically applies best armor within inventory.
-33. **/autotool [enable/disable]**: Automatically applies best tool within inventory.
-34. **/expfly**: Allows you to fly at a cost of 500 experience points every minute.
-35. **/back**: Back to the last death location.
-36. **/voidsafe [enable/disable]**: Fall into the void without the risk of dying.
-37. **/hard [enable/disable]**: This makes the game very difficult...
-38. **/explosion [enable/disable]**: Enable or disable creeper or TNT explosions.
-39. **/multibreak**: Allows you to break 3x3x3 at a cost of 500 experience points every minute.
-40. **/nickname [name/reset]**: Give yourself a nickname of choice; costs experience.
-41. **/whois [player]**: Find out who someone is no matter the nickname.
-42. **/show [hand]**: Show off your numerous items and stuff.
-43. **/clone [hand]**: Why dupe when you can do it legally; costs experience.
-44. **/broadcast [message]**: Broadcast your message to the server at the cost of experience.
-45. **/autotorch [enable/disable]**: Automatically place torches depending on light level efficiently.
-46. **/morexp [enable/disable]**: Gives XP based on what you do—mining, farming, etc.
+10. **/pv [number]**: PlayerVault storage for players.
+11. **/fix [hand/all]**: Repair items for experience.
+12. **/heal**: Heal the player to full health (OP only).
+13. **/sethome [name]**: Set a home location.
+14. **/home [name]**: Teleport to a home location.
+15. **/delhome [name]**: Delete a home location.
+16. **/homes**: View current homes.
+17. **/feed**: Feed the player (OP only).
+18. **/spawn [set]**: Set and/or teleport to spawn.
+19. **/lock [day/night]**: Lock the current time to day or night.
+20. **/freeze [player] [time]**: Freeze other players.
+21. **/showcoords**: Show current coordinates within game chat.
+22. **/uncraft [hand]**: Uncraft an item you are holding.
+23. **/autorod**: Gives a fishing rod that auto-fishes.
+24. **/tos [accept/deny]**: Accept or deny the terms of service.
+25. **/near**: See who may be nearby.
+26. **/trash**: Throw useless garbage away for good.
+27. **/message [player]**: Send a message to another player.
+28. **/reply [player]**: Replies to another player.
+29. **/color [color/style]**: Provides color examples.
+30. **/invsee [player]**: View another player's inventory for a short duration.
+31. **/autoarmor [enable/disable]**: Automatically applies best armor within inventory.
+32. **/autotool [enable/disable]**: Automatically applies best tool within inventory.
+33. **/expfly**: Allows you to fly at a cost of 500 experience points every minute.
+34. **/back**: Back to the last death location.
+35. **/voidsafe [enable/disable]**: Fall into the void without the risk of dying.
+36. **/hard [enable/disable]**: This makes the game very difficult...
+37. **/explosion [enable/disable]**: Enable or disable creeper or TNT explosions.
+38. **/multibreak**: Allows you to break 3x3x3 at a cost of 500 experience points every minute.
+39. **/nickname [name/reset]**: Give yourself a nickname of choice; costs experience.
+40. **/whois [player]**: Find out who someone is no matter the nickname.
+41. **/show [hand]**: Show off your numerous items and stuff.
+42. **/clone [hand]**: Why dupe when you can do it legally; costs experience.
+43. **/broadcast [message]**: Broadcast your message to the server at the cost of experience.
+44. **/autotorch [enable/disable]**: Automatically place torches depending on light level efficiently.
+45. **/morexp [enable/disable]**: Gives XP based on what you do—mining, farming, etc.
+46. **/combine [hand] [potion]**: Combine potions with anything in your main hand.
+47. **/gravity [low/medium/high]**: Moon-like gravity to traverse the world itself.
+48. **/blink [distance]**: Teleport a short distance in any direction.
+49. **/itemroll [auto/once] [amount]**: Allows the player to roll for random stuff.
+50. **/infinite [water/lava]**: Purchase infinite water/lava bucket via experience.
+51. **/boost [enable/disable]**: As fast as the flash; costs experience.
+52. **/border [square] [size]**: Gives XP based on what you do—mining, farming, etc.
+53. **/rtp**: Random teleport throughout your world.
 
 
 ---
@@ -132,6 +139,16 @@ AstroCore provides a range of commands designed to enhance gameplay and offer un
 | `astrocore.broadcast`  | Broadcast your message to the server; costs XP.       | `false`  |
 | `astrocore.autotorch`  | Automatically place torches; depends on light level.  | `false`  |
 | `astrocore.morexp`     | Gives xp based on stuff. Mining, farming, etc...      | `false`  |
+| `astrocore.combine`    | Combine potions with anything in your main hand.      | `false`  |
+| `astrocore.gravity`    | Moon-like gravity to traverse the world itself.       | `false`  |
+| `astrocore.blink`      | Teleport a short distance in any direction.           | `false`  |
+| `astrocore.itemroll`   | Allows the player to roll for random stuff.           | `false`  |
+| `astrocore.infinite`   | Purchase infinite water/lava bucket via experience.   | `false`  |
+| `astrocore.boost`      | As fast as the flash; costs experience.               | `false`  |
+| `astrocore.border`     | Make/remove a square world border.                    | `false`  |
+| `astrocore.broadcast`  | Broadcast your message to the server; costs XP.       | `false`  |
+| `astrocore.autotorch`  | Automatically place torches; depends on light level.  | `false`  |
+| `astrocore.rtp`        | Random teleport throughout your world.                | `false`  |
 
 
 ---
