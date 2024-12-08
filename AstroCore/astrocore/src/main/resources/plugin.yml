@@ -1,6 +1,6 @@
 name: AstroCore
 main: dev.astroolean.AstroCore
-version: 1.7
+version: 1.8
 api-version: 1.20
 authors: [ Astroolean ]
 description: My first plugin ever...
@@ -186,3 +186,35 @@ commands:
     description: "Gives xp based on what you do. Mining, farming, etc..."
     usage: "/morexp [enable/disable]"
     permission: astrocore.morexp
+  combine:
+    description: "Combine potions with anything in your main hand."
+    usage: "/combine [hand] [potion]"
+    permission: astrocore.combine
+  gravity:
+    description: "Moon-like gravity to traverse the world itself."
+    usage: "/gravity [low/medium/high]"
+    permission: astrocore.gravity
+  blink:
+    description: "Teleport a short distance in any direction."
+    usage: "/blink [distance]"
+    permission: astrocore.blink
+  itemroll:
+    description: "Allows the player to roll for random stuff."
+    usage: "/itemroll [auto/once] [amount]"
+    permission: astrocore.itemroll
+  infinite:
+    description: "Purchase infinite water/lava bucket via experience."
+    usage: "/infinite [water/lava]"
+    permission: astrocore.infinite
+  boost:
+    description: "As fast as the flash; costs experience."
+    usage: "/boost [enable/disable]"
+    permission: astrocore.boost
+  border:
+    description: "Make/remove a square world border."
+    usage: "/border [square] [size]"
+    permission: astrocore.border
+  rtp:
+    description: "Random teleport throughout your world."
+    usage: "/rtp"
+    permission: astrocore.rtp
