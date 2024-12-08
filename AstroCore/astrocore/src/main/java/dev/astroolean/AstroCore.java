@@ -6,6 +6,7 @@ import dev.astroolean.commands.player.*;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
+
 import java.util.List;
 import java.util.UUID;
 import java.util.logging.Level;
@@ -15,6 +16,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.Bukkit;
+import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -39,6 +41,22 @@ public class AstroCore extends JavaPlugin implements Listener {
         if (!playerDataDir.exists()) {
             playerDataDir.mkdirs();
         }
+
+        // Load configuration
+        saveDefaultConfig();
+
+        // Restore borders for all worlds
+        for (World world : getServer().getWorlds()) {
+            if (getConfig().contains("border." + world.getName())) {
+                double x = getConfig().getDouble("border." + world.getName() + ".center.x");
+                double z = getConfig().getDouble("border." + world.getName() + ".center.z");
+                double size = getConfig().getDouble("border." + world.getName() + ".size");
+
+                org.bukkit.WorldBorder worldBorder = world.getWorldBorder();
+                worldBorder.setCenter(x, z);
+                worldBorder.setSize(size);
+            }
+        }
     
         // Initialize PlayerVaultCommand and load vaults
         playerVaultCommand = new PlayerVaultCommand(this); // Initialize here
@@ -51,7 +69,7 @@ public class AstroCore extends JavaPlugin implements Listener {
                                ____________________________
                               |                            |
                               |      AstroCore Plugin      |
-                              |            V1.7            |
+                              |            V1.8            |
                               |____________________________|
     
                               My first plugin has started...
@@ -119,6 +137,14 @@ public class AstroCore extends JavaPlugin implements Listener {
         registerCommand("broadcast", new BroadcastCommand(this));
         registerCommand("autotorch", new AutoTorchCommand(this));
         registerCommand("morexp", (CommandExecutor) new XPCommand(this));
+        registerCommand("combine", new CombinePotionCommand(this));
+        registerCommand("gravity", new GravityCommand(this));
+        registerCommand("blink", new BlinkCommand(this));
+        registerCommand("itemroll", new ItemRollCommand(this));
+        registerCommand("infinite", new InfiniteCommand(this));
+        registerCommand("boost", new BoostCommand(this));
+        registerCommand("border", new BorderCommand(this));
+        registerCommand("rtp", new RTPCommand(this));
     
         // Register this class as a listener
         getServer().getPluginManager().registerEvents(this, this);
@@ -129,6 +155,9 @@ public class AstroCore extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(new BackCommand(this), this);
         getServer().getPluginManager().registerEvents(new ExplosionCommand(this), this);
         getServer().getPluginManager().registerEvents(new XPCommand(this), this);
+        getServer().getPluginManager().registerEvents(new CombinePotionCommand(this), this);
+        getServer().getPluginManager().registerEvents(new ItemRollCommand(this), this);
+        getServer().getPluginManager().registerEvents(new InfiniteCommand(this), this);
     
         // Register tab completer for commands
         for (String command : new String[] {
@@ -138,7 +167,8 @@ public class AstroCore extends JavaPlugin implements Listener {
             "showcoords", "uncraft", "autorod", "tos", "near", "trash", "message", 
             "color", "invsee", "autoarmor", "autotool", "expfly", "back", "voidsafe",
             "hard", "explosion", "multibreak", "nickname", "whois", "show",
-            "broadcast", "autotorch", "morexp"
+            "broadcast", "autotorch", "morexp", "combine", "gravity", "blink",
+            "itemroll", "infinite", "boost", "border", "rtp"
         }) {
             PluginCommand cmd = getCommand(command);
             if (cmd != null) {
@@ -255,6 +285,53 @@ public class AstroCore extends JavaPlugin implements Listener {
                         case "morexp" -> {
                             if (args.length == 1) {
                                 completions.addAll(Arrays.asList("enable", "disable"));
+                            }
+                        }
+                        case "gravity" -> {
+                            if (args.length == 1) {
+                                completions.addAll(Arrays.asList("off", "low", "medium", "high"));
+                            }
+                        }
+                        case "blink" -> {
+                            if (args.length == 1) {
+                                // Suggest the placeholder "<amount>" instead of numbers
+                                completions.add("<1-10>");
+                            }
+                        }
+                        case "itemroll" -> {
+                            if (args.length == 1) {
+                                completions.addAll(Arrays.asList("auto", "once"));
+                            } else if (args.length == 2) {
+                                // If the first argument is "once", do not show any amount completions
+                                if ("once".equalsIgnoreCase(args[0])) {
+                                    // No completions for "once"
+                                } else {
+                                    // Suggest the placeholder "<amount>"
+                                    List<String> amountPlaceholder = new ArrayList<>();
+                                    amountPlaceholder.add("<amount>");
+                                    completions.addAll(amountPlaceholder);
+                                }
+                            }
+                        }
+                        case "infinite" -> {
+                            if (args.length == 1) {
+                                completions.addAll(Arrays.asList("water", "lava"));
+                            }
+                        }
+                        case "boost" -> {
+                            if (args.length == 1) {
+                                completions.addAll(Arrays.asList("enable", "disable"));
+                            }
+                        }
+                        case "border" -> {
+                            if (args.length == 1) {
+                                // Provide completion for the first argument (remove, square, or circle)
+                                completions.addAll(Arrays.asList("remove", "square"));
+                            } else if (args.length == 2) {
+                                // Suggest the placeholder "<size>" if the second argument is for size
+                                List<String> amountPlaceholder = new ArrayList<>();
+                                amountPlaceholder.add("<size>");
+                                completions.addAll(amountPlaceholder);
                             }
                         }
                         // Add more cases as needed for other commands if tab completion options are required...
